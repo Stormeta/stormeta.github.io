@@ -1,0 +1,466 @@
+:root {
+    --cream: rgb(249, 243, 229);
+    --blue: rgb(49, 103, 231);
+    --red: rgb(234, 72, 104);
+    --yellow-brown: rgb(235, 164, 74);
+    --gray: rgb(72, 72, 72);
+    --White: rgb(255, 255, 255);
+}
+
+@font-face {
+    font-family: lato;
+    src: url(./Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato_bold;
+    src: url(./Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: Playfair_Display;
+    src: url(./Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-inline: 0.8rem;
+    background-color: var(--cream);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.menu-or-navlinks {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.navlinks {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    font-family: lato;
+    color: var(--gray);
+    font-size: 0.8em;
+}
+
+.link {
+    cursor: pointer;
+    position: relative;
+    transition: 0.8s 0.1s ease-in-out;
+}
+
+.link:hover {
+    color: var(--blue);
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    border: 1px solid var(--blue);
+    transition: 0.8s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.link:hover::before {
+    transform: scaleY(1);
+    left: 105%;
+}
+
+.btns {
+    display: none;
+    align-items: center;
+}
+
+.sign-btn {
+    border: none;
+    padding-inline: 0.9rem;
+    padding-block: 0.8rem;
+    font-family: lato;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--gray);
+    transition: 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.join-btn {
+    border: none;
+    padding-inline: 0.9rem;
+    padding-block: 0.8rem;
+    font-family: lato;
+    border-radius: 5px;
+    background-color: var(--blue);
+    color: var(--White);
+    transition: 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.hiring {
+    color: var(--White);
+    background-image: linear-gradient(90deg, var(--yellow-brown), var(--red));
+    font-family: lato;
+    font-weight: 500;
+    font-size: 0.6em;
+    padding-inline: 0.6rem;
+    padding-block: 0.3rem;
+    border-radius: 50px;
+}
+
+/* hero section styling */
+.hero-sec {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-img-ctn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-block: 1.2rem;
+}
+
+.shape {
+    width: 60%;
+    position: absolute;
+    top: 0;
+}
+
+.hero-img {
+    width: 60%;
+    z-index: 4;
+    transform: rotateZ(0deg);
+}
+
+.blue {
+    transform: rotateZ(-48deg);
+}
+
+.pink {
+    z-index: 2;
+    transform: rotateZ(-35deg);
+}
+
+.purple {
+    z-index: 3;
+    transform: rotateZ(-20deg);
+}
+
+/* article styling */
+article {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article-head {
+    font-family: Playfair_Display;
+    font-size: 1.9em;
+}
+
+.article-msg {
+    font-family: lato;
+    font-size: 0.88em;
+    color: var(--gray);
+}
+
+form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.email {
+    width: 100%;
+    border: none;
+    padding-inline: 1rem;
+    padding-block: 1.2rem;
+    font-family: lato;
+    border-radius: 5px;
+    color: var(--gray);
+    background-color: var(--White);
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    padding-inline: 1rem;
+    padding-block: 1.2rem;
+    font-family: lato;
+    border-radius: 5px;
+    background-color: var(--blue);
+    color: var(--White);
+    transition: 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    color: var(--gray);
+    background-color: var(--cream);
+    box-shadow: inset 6px 6px 8px -8px rgba(0, 0, 0, 0.533), 4px 4px 8px -8px rgba(0, 0, 0, 0.533);
+}
+
+.promises {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: lato;
+    font-size: 0.8em;
+    color: var(--gray);
+}
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: lato;
+    font-size: 0.8em;
+    color: var(--gray);
+    padding-block: 2rem;
+}
+
+.footer-link:first-child {
+    cursor: pointer;
+    position: relative;
+    transition: 0.8s 0.1s ease-in-out;
+}
+
+.footer-link:first-child:hover {
+    color: var(--blue);
+}
+
+.footer-link:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    border: 1px solid var(--blue);
+    transition: 0.8s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.footer-link:first-child:hover::before {
+    transform: scaleY(1);
+    left: 105%;
+}
+
+/* second child instagram hover effect */
+.footer-link:nth-child(2) {
+    cursor: pointer;
+    position: relative;
+    transition: 0.8s 0.1s ease-in-out;
+}
+
+.footer-link:nth-child(2):hover {
+    color: #ed546d;
+}
+
+.footer-link:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    border: 1px solid #ed546d;
+    transition: 0.8s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.footer-link:nth-child(2):hover::before {
+    transform: scaleY(1);
+    left: 105%;
+}
+
+/* last child or twitter hover effect styling */
+.footer-link:last-child {
+    cursor: pointer;
+    position: relative;
+    transition: 0.8s 0.1s ease-in-out;
+}
+
+.footer-link:last-child:hover {
+    color: var(--blue);
+}
+
+.footer-link:last-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 100%;
+    border: 1px solid var(--blue);
+    transition: 0.8s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.footer-link:last-child:hover::before {
+    transform: scaleY(1);
+    left: 105%;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    font-size: 0.9em;
+    font-family: Playfair_Display;
+}
+
+.bot-dp-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+}
+
+.bot-img {
+    width: 100%;
+}
+
+.bold {
+    font-family: lato_bold;
+    cursor: pointer;
+    position: relative;
+    transition: 0.8s 0.1s ease-in-out;
+}
+
+.bold::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    width: 10%;
+    border: 1px solid transparent;
+    transition: 0.8s ease-in-out;
+    transform-origin: top;
+}
+
+.bold:hover::before {
+    border-color: var(--blue);
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .article-head {
+        font-size: 3.5em;
+    }
+
+    .article-msg {
+        font-size: 1.2em;
+    }
+
+    form {
+        flex-direction: row;
+        width: 70%;
+    }
+
+    .email {
+        width: 80%;
+    }
+
+    .submit-btn {
+        padding-inline: 1rem;
+        width: 20%;
+        white-space: nowrap;
+        min-width: 103px;
+    }
+
+    .footer-right {
+        width: fit-content;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 800px) {
+
+    body {
+        padding-right: 4rem;
+        padding-left: 6rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navlinks {
+        display: flex;
+    }
+
+    .btns {
+        display: flex;
+    }
+
+    .hero-sec {
+        flex-direction: row-reverse;
+        justify-content: unset;
+        gap: 1.5rem;
+    }
+
+    .article-head {
+        font-size: 2.5em;
+    }
+
+    .article-msg {
+        font-size: 1em;
+    }
+}
